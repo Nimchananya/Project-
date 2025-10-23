@@ -1,0 +1,132 @@
+<!DOCTYPE html> <html lang="th"> 
+<head> 
+<meta charset="UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+<title>ข้อมูลบริษัท</title> <style> 
+body { 
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; 
+        background-color: #ffffff; 
+        margin: 0; 
+        padding: 60px; 
+        color: #333; 
+    }
+.info-container {
+  background: #fff;
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e5e5;
+}
+
+h2 {
+  color: #007bff;
+  font-size: 20px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 40px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.value {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #000;
+}
+
+@media (max-width: 700px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style> 
+</head> 
+<body> 
+<div class="info-container"> 
+   <h2>ข้อมูลบริษัท</h2>
+    <div class="info-grid"> 
+        <div class="info-item" id="item-name">
+            <div class="label">ชื่อ-สกุล/ชื่อบริษัท</div>
+            <div class="value" id="value-name"></div>
+        </div>
+
+        <div class="info-item" id="item-tax">
+            <div class="label">เลขบัตรประชาชน/เลขที่ผู้เสียภาษี</div>
+            <div class="value" id="value-tax"></div>
+        </div>
+
+        <div class="info-item" id="item-address-number">
+            <div class="label">ที่อยู่เลขที่</div>
+            <div class="value" id="value-address-number"></div>
+        </div>
+
+        <div class="info-item" id="item-moo">
+            <div class="label">หมู่</div>
+            <div class="value" id="value-moo"></div>
+        </div>
+
+        <div class="info-item" id="item-building">
+            <div class="label">หมู่บ้าน/อาคาร</div>
+            <div class="value" id="value-building"></div>
+        </div>
+
+        <div class="info-item" id="item-soi">
+            <div class="label">ซอย</div>
+            <div class="value" id="value-soi"></div>
+        </div>
+
+        <div class="info-item" id="item-road">
+            <div class="label">ถนน</div>
+            <div class="value" id="value-road"></div>
+        </div>
+
+        <div class="info-item" id="item-subdistrict">
+            <div class="label">ตำบล/แขวง</div>
+            <div class="value" id="value-subdistrict"></div>
+        </div>
+
+        <div class="info-item" id="item-district">
+            <div class="label">อำเภอ/เขต</div>
+            <div class="value" id="value-district"></div>
+        </div>
+
+        <div class="info-item" id="item-province">
+            <div class="label">จังหวัด</div>
+            <div class="value" id="value-province"></div>
+        </div>
+
+        <div class="info-item" id="item-zipcode">
+            <div class="label">รหัสไปรษณีย์</div>
+            <div class="value" id="value-zipcode"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="main.js"></script>
+
+</body> 
+</html>

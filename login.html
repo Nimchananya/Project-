@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เข้าสู่ระบบ</title>
+<style>
+    body {
+        font-family: "Prompt", sans-serif;
+        background-color: #f8f9fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .login-container {
+        background-color: #fff;
+        padding: 40px 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+    }
+    .login-container h2 {
+        margin: 0 0 10px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .login-container p {
+        font-size: 14px;
+        color: #555;
+        margin: 0 0 20px;
+    }
+    .trial {
+        color: #28a745;
+        font-size: 14px;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+    form .form-row {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 15px;
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    form .form-row label {
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+    form .form-row input[type="text"],
+    form .form-row input[type="password"] {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+    .show-pass {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 20px;
+        font-size: 14px;
+    }
+    .show-pass input {
+        margin-right: 5px;
+    }
+    .forgot {
+        color: #007bff;
+        text-decoration: none;
+    }
+    button {
+        width: 100%;
+        max-width: 300px;
+        padding: 12px;
+        background-color: #007bff;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>เข้าสู่ระบบ</h2>
+    <p>มองเห็นทุกการเคลื่อนไหว ธุรกิจไม่สะดุด</p>
+    <span class="trial">ทดลองใช้งานฟรี 6 เดือน</span>
+    
+    <form>
+        <div class="form-row">
+            <label for="username">บัญชีผู้ใช้ (Username) *</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="form-row">
+            <label for="password">รหัสผ่าน (Password) *</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="show-pass">
+            <div>
+                <input type="checkbox" id="showPassword" onclick="togglePassword()">
+                <label for="showPassword">แสดงรหัสผ่าน</label>
+            </div>
+            <a id="btnMembership" class="forgot" target="_blank">สมัครสมาชิก</a>
+        </div>
+
+        <button type="submit" onclick="login(event)">เข้าสู่ระบบ</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="login.js"></script>
+
+</body>
+</html>

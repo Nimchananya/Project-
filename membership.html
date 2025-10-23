@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>สมัครสมาชิก</title>
+<style>
+    body {
+        font-family: "Prompt", sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 750px;
+        background: #fff;
+        margin: 40px auto;
+        padding: 35px 45px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        margin-bottom: 10px;
+        color: #2b2b2b;
+    }
+
+    .free-trial {
+        color: #28a745;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
+        margin-top: 10px;
+    }
+
+    input[type="text"], input[type="password"], input[type="email"], select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+        box-sizing: border-box;
+        margin-bottom: 8px;
+    }
+
+    input:focus, select:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 3px rgba(0,123,255,0.5);
+    }
+
+    .row {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+
+    .row > div {
+        flex: 1;
+    }
+
+    .password-rules {
+        font-size: 13px;
+        color: #666;
+        margin-top: 5px;
+        margin-left: 10px;
+        line-height: 1.5;
+    }
+
+    .btn {
+        margin-top: 25px;
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #0069d9;
+    }
+
+    .required {
+        color: red;
+    }
+
+    select.user-type {
+        width: 240px;
+        display: inline-block;
+    }
+
+    input.zip-code {
+        width: 240px;
+        display: inline-block;
+    }
+</style>
+</head>
+<body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<div class="container">
+    <h2>สมัครสมาชิก</h2>
+    <div class="free-trial">🔵 ทดลองใช้งานฟรี 6 เดือน</div>
+    <form>
+        <label>บัญชีผู้ใช้ (Username) <span class="required">*</span></label>
+        <input type="text" id="username" placeholder="กรอกชื่อผู้ใช้" pattern="[a-zA-Z0-9]*" oninput="this.value=this.value.replace(/[^a-zA-Z0-9]/g,'');" style="width:100%;">
+
+        <label>รหัสผ่าน (Password) <span class="required">*</span></label>
+        <div class="password-wrapper" style="position: relative; display: inline-block; width: 100%;">
+            <input type="password" id="passwordInput" placeholder="กรอกรหัสผ่าน" style="width: 100%; padding-right: 40px;">
+            <i class="fa-regular fa-eye" id="togglePassword" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #555;"></i>
+        </div>
+
+        <div class="password-rules">
+            <div id="ruleUpper" style="color: red;">● มีตัวอักษรพิมพ์ใหญ่</div>
+            <div id="ruleLower" style="color: red;">● มีตัวอักษรพิมพ์เล็ก</div>
+            <div id="ruleNumber" style="color: red;">● มีตัวเลข</div>
+            <div id="ruleLength" style="color: red;">● จำนวนอักขระระหว่าง 8–20 ตัวอักษร</div>
+        </div>
+
+        <label>ประเภท <span class="required">*</span></label>
+        <select id="userType" class="user-type">
+            <option>--- เลือก ---</option>
+            <option>บุคคลธรรมดา</option>
+            <option>นิติบุคคล</option>
+        </select>
+
+        <div class="row">
+            <div>
+                <label>ชื่อ–สกุล/ชื่อบริษัท <span class="required">*</span></label>
+                <input type="text" id="fullName">
+            </div>
+            <div>
+                <label>ที่อยู่เลขที่</label>
+                <input type="text" id="addressNumber">
+            </div>
+            <div>
+                <label>หมู่</label>
+                <input type="text" id="villageNumber">
+            </div>
+        </div>
+
+        <div class="row">
+            <div>
+                <label>หมู่บ้าน/อาคาร</label>
+                <input type="text" id="building">
+            </div>
+            <div>
+                <label>ซอย</label>
+                <input type="text" id="soi">
+            </div>
+            <div>
+                <label>ถนน <span class="required">*</span></label>
+                <input type="text" id="road">
+            </div>
+        </div>
+
+        <div class="row">
+            <div>
+                <label>ตำบล/แขวง</label>
+                <input type="text" id="subDistrict">
+            </div>
+            <div>
+                <label>อำเภอ/เขต <span class="required">*</span></label>
+                <input type="text" id="district">
+            </div>
+            <div>
+                <label>จังหวัด <span class="required">*</span></label>
+                <input type="text" id="province">
+            </div>
+        </div>
+
+        <label>รหัสไปรษณีย์ <span class="required">*</span></label>
+        <input type="text" id="zipCode" class="zip-code">
+
+        <div class="row">
+            <div>
+                <label>คำนำหน้าผู้ติดต่อ</label>
+                <select id="contactPrefix">
+                    <option>--- เลือก ---</option>
+                    <option>นาย</option>
+                    <option>นาง</option>
+                    <option>นางสาว</option>
+                </select>
+            </div>
+            <div>
+                <label>ชื่อผู้ติดต่อ <span class="required">*</span></label>
+                <input type="text" id="contactFirstName">
+            </div>
+            <div>
+                <label>สกุลผู้ติดต่อ <span class="required">*</span></label>
+                <input type="text" id="contactLastName">
+            </div>
+        </div>
+
+        <div class="row">
+            <div>
+                <label>เบอร์โทรศัพท์ <span class="required">*</span></label>
+                <input type="text" id="phone">
+            </div>
+            <div>
+                <label>อีเมล <span class="required">*</span></label>
+                <input type="email" id="email">
+            </div>
+            <div>
+                <label>โค้ดแนะนำ (REF)</label>
+                <input type="text" id="refCode">
+            </div>
+        </div>
+
+        <button class="btn" onclick="checkuser(event)">สมัครสมาชิก</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="membership.js"></script>
+
+</body>
+
+</html>
