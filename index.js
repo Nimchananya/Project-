@@ -1,4 +1,4 @@
-// server.js
+
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
@@ -6,11 +6,10 @@ const cors = require('cors');
 const app = express();
 const port = 3000;
 
-// เปิด CORS สำหรับทุก origin
 app.use(cors());
 app.use(express.json());
 
-// เชื่อมต่อ MySQL
+
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -26,7 +25,6 @@ connection.connect((err) => {
     console.log('Connection SQL Success');
 });
 
-// POST /api/inser
 
 app.post('/api/inser', (req, res) => {
     const {
